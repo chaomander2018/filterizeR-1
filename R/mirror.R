@@ -7,7 +7,7 @@
 # This script tests the function from mirror.R
 
 # This script tests the mirror function of the filterizeR package.
-# This function sharpens an image.
+# This function mirrors an image.
 # Input  : An image in .png, .jpeg,.gif,.bmp, .jpg format
 # Output : A mirrored image in the same format as the input image file type
 
