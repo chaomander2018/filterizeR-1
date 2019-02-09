@@ -4,17 +4,18 @@
 # You may obtain a copy of the License at https://mit-license.org
 
 # Feburary 2019
-# This script tests the function from sharpen.R
+# This script tests the function from color.R
 
 
-# This function sharpens an image.
+# This function colors an image to greenscale.
 # Input  : An image in .png, .jpeg,.gif,.bmp, .jpg format
-# Output : A sharpened image in the same format as the input image file type
+# Output : A green-colored image in the same format as the input image file type
 
 library(devtools)
 library(usethis)
 
-#' Sharpened
+
+#' color
 #'
 #' @param input_path string, path for the input png file
 #'
@@ -22,9 +23,9 @@ library(usethis)
 #' @export
 #'
 #' @examples
-#' #' sharpen("../img/test.png")
+#' #' color("../img/test.png")
 #'
-sharpen <- function(input_path) {
+color <- function(input_path) {
 
 
 }
