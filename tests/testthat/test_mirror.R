@@ -4,12 +4,9 @@
 # You may obtain a copy of the License at https://mit-license.org
 
 # Feburary 2019
-# This script tests the function from mirror.R
-
 # This script tests the mirror function of the filterizeR package.
-# This function sharpens an image.
-# Input  : An image in .png, .jpeg,.gif,.bmp, .jpg format
-# Output : A mirrored image in the same format as the input image file type
+# Input  : A path to an image in .png, .jpeg,.gif,.bmp, .jpg format
+# Output : A path to a mirrored image in the same format as the input image file type
 
 library(testthat)
 library(imager)
