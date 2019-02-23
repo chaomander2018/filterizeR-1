@@ -19,9 +19,22 @@
 #' @export
 #'
 #' @examples
-#' #' mirror("../img/random.png")
-#'
+#' #' mirror("../../img/test_original.jpg")
+
+library(testthat)
+library(stringr)
+library(imager)
+
 mirror <- function(input_path) {
-
-
+  
+  input_img <- load.image(input_path)
+  output_img <- input_img
+  dim <- input_img %>% dim
+  
+  # negative lookahead regex
+  output_path <- str_replace(input_path, "/(?!.*/)", "/mirrored_")
+  
+  output_img <- as.cimg(input_img[dim[1]:1,,,], dim=dim)
+  
+  save.image(output_img, output_path)
 }

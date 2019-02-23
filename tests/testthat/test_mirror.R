@@ -10,17 +10,17 @@
 
 library(testthat)
 library(imager)
-library(filterizeR)
+source("../../R/mirror.R")
 
-input_img <- load.image("animegirl.jpg")
-mirror(input_img)
-output_img <- load.image("reversegirl.jpg")
+input_img <- load.image("../../img/test_original.jpg")
+mirror("../../img/test_original.jpg")
+output_img <- load.image("../../img/test_original.jpg")
 
 test_that("Input output dimensions match", {
   expect_equal(dim(input_img), dim(output_img))
 })
 
-test_that("First and last pixel columns do not match", {
+test_that("First and last pixel columns match", {
   # for some reason imager reads in the picture flipped
   expect_equal(input_img[1, , , ], output_img[nrow(output_img), , , ])
 })
@@ -31,7 +31,7 @@ test_that("Middle column has been transformed correctly", {
 
   if (n %% 2 == 0 ){
     mid <- floor(n/2)
-    expect_equal(input_img[mid, , , ], output_img[mid-1, , , ])
+    expect_equal(input_img[mid, , , ], output_img[mid+1, , , ])
   } else {
     mid <- floor(n/2)
     expect_equal(input_img[mid, , , ], output_img[mid, , , ])
