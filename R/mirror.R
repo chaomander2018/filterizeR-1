@@ -16,12 +16,23 @@
 #' @param input_path string, path for the input png file
 #'
 #' @return a png file at the same path as input_path
-#' @export
+#' @export 
 #'
 #' @examples
-#' #' mirror("../img/random.png")
-#'
+#' #' mirror("test_img/test_original.jpg")
+
 mirror <- function(input_path) {
-
-
+  
+  input_img <- imager::load.image(input_path)
+  output_img <- input_img
+  dim <- input_img %>% dim
+  
+  # negative lookahead regex
+  output_path <- str_replace(input_path, "/(?!.*/)", "/mirrored_")
+  
+  output_img <- as.cimg(input_img[dim[1]:1,,,], dim=dim)
+  
+  imager::save.image(im=output_img, file=output_path)
+  return(output_path)
 }
+
