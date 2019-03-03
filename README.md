@@ -31,7 +31,7 @@ This sharpen filter highlights edges and fine details in an image.
 
 - #### Mirror Filter `mirror()`
 This mirror filter function will use convolution to convert the original image to a mirrored image i.e. the left side of the image will be transformed into the right side and the right side of the original image will be transformed into the left side.
-![insert flag image before and after](img/mirror.png)
+![insert flag image before and after](img/mirror_eff.png)
 
 ## Installation
 Please check whether you have installed `devtools` in R.
