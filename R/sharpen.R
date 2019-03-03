@@ -16,7 +16,7 @@
 #' @return a png file path
 #' @export
 #' @examples
-#' sharpen("../img/theme.png")
+#' #' sharpen("img/theme.png")
 #'
 
 
@@ -30,9 +30,9 @@ sharpen <- function(input_path) {
   # Construct the sharpen filter `ft`.
   ft <- matrix(c(0.00, -0.75, 0.00,-0.75, 4.50,-0.75, 0.00, -0.75, 0.00 ), nrow=3, ncol =3)
   # Apply the sharpen filter `ft` to the input image.
-  output_img <- filter2(input_img, ft, boundary = c("circular", "replicate"))
+  output_img <- EBImage::filter2(input_img, ft, boundary = c("circular", "replicate"))
   output_path <- stringr::str_replace(input_path, "/(?!.*/)", "/sharpened_")
-  writeImage(output_img, output_path, quality = 85)
+  EBImage::writeImage(output_img, output_path, quality = 85)
   return(output_path)
   
 }

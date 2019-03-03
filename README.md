@@ -34,10 +34,11 @@ This mirror filter function will use convolution to convert the original image t
 ![insert flag image before and after](img/mirror_eff.png)
 
 ## Installation
-Please check whether you have installed `devtools` in R.
-To install `filterizeR` package, run the following line on your R console:
-`devtools::install_github("filterizeR")`
-`devtools::install_github("UBC-MDS/InstaR", build_vignettes = TRUE)`
+- Please check whether you have installed `devtools` in R.
+- Second, `install.packages("BiocManager")` so you can install the EBImage Dependencies `BiocManager::install("EBImage")`
+- To install `filterizeR` package, run the following line on your R console:
+`devtools::install_github("UBC-MDS/filterizeR",build_vignettes = TRUE)`
+
 
 
 ## Usage

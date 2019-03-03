@@ -27,10 +27,10 @@ library(BiocManager)
 
 
 #source("R/sharpen.R")
-test_img <- "test_imgs/test_original.jpg"
+test_img <- "test_img/test_sharpen.png"
 
-input_img <- readImage(test_img)
-output_img <-readImage(sharpen(test_img))
+input_img <- EBImage::readImage(test_img)
+output_img <-EBImage::readImage(sharpen(test_img))
 
 #"test_img/sharpened_theme.png")
 
