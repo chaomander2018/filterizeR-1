@@ -16,18 +16,14 @@
 #' @param input_path string, path for the input png file
 #'
 #' @return a png file at the same path as input_path
-#' @export
+#' @export 
 #'
 #' @examples
-#' #' mirror("../../img/test_original.jpg")
-
-library(testthat)
-library(stringr)
-library(imager)
+#' #' mirror("test_img/test_original.jpg")
 
 mirror <- function(input_path) {
   
-  input_img <- load.image(input_path)
+  input_img <- imager::load.image(input_path)
   output_img <- input_img
   dim <- input_img %>% dim
   
@@ -36,5 +32,7 @@ mirror <- function(input_path) {
   
   output_img <- as.cimg(input_img[dim[1]:1,,,], dim=dim)
   
-  save.image(output_img, output_path)
+  imager::save.image(im=output_img, file=output_path)
+  return(output_path)
 }
+
