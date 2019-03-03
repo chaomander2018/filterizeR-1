@@ -2,7 +2,7 @@
 % Please edit documentation in R/mirror.R
 \name{mirror}
 \alias{mirror}
-\title{Flip}
+\title{Returns a mirrored image}
 \usage{
 mirror(input_path)
 }
@@ -10,10 +10,10 @@ mirror(input_path)
 \item{input_path}{string, path for the input png file}
 }
 \value{
-a png file at the same path as input_path
+an image file at the same path as input_path and returns the output path
 }
 \description{
-Flip
+Returns a mirrored image
 }
 \examples{
 
