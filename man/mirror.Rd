@@ -16,5 +16,7 @@ a png file at the same path as input_path
 Flip
 }
 \examples{
+
 #' mirror("test_img/test_original.jpg")
+
 }

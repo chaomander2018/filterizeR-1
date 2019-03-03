@@ -12,8 +12,17 @@ Encoding: UTF-8
 LazyData: true
 RoxygenNote: 6.1.1
 Imports: 
-    devtools,
+
     testthat,
-    stringr,
+    reader,
     imager,
-    dplyr
+    EBImage,
+    devtools,
+    usethis,
+    stringr,
+    lattice,
+    magrittr,
+    dplyr,
+    BiocManager,
+    rlang
+
