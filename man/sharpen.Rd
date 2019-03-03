@@ -2,14 +2,17 @@
 % Please edit documentation in R/sharpen.R
 \name{sharpen}
 \alias{sharpen}
+
 \title{Sharpened
 This function sharpens an image.
 input_img  : An image in .png, .jpeg,.gif,.bmp, .jpg format
 output_img : A sharpened image in the same format as the input image file type}
+
 \usage{
 sharpen(input_path)
 }
 \arguments{
+
 \item{input_path}{character, path of the input png file}
 }
 \value{
@@ -23,5 +26,6 @@ output_img : A sharpened image in the same format as the input image file type
 }
 \examples{
 sharpen("../img/theme.png")
+
 
 }
