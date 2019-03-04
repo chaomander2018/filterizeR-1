@@ -11,11 +11,11 @@
 # Input  : An image in .png, .jpeg,.gif,.bmp, .jpg format
 # Output : A mirrored image in the same format as the input image file type
 
-#' Flip
+#' Returns a mirrored image
 #'
 #' @param input_path string, path for the input png file
 #'
-#' @return a png file at the same path as input_path
+#' @return an image file at the same path as input_path and returns the output path
 #' @export 
 #'
 #' @examples
