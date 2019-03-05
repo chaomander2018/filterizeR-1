@@ -1,0 +1,63 @@
+---
+title: "filterizeR Package"
+author: "Akansha Vashisth,Chao Wang, Jack Yang"
+date: "`r Sys.Date()`"
+output:
+  rmarkdown::html_vignette:
+    toc: true
+    keep_md: true
+vignette: >
+  %\VignetteIndexEntry{filterizeR Package Manifesto}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+## Package Info
+
+This R package specializes in filtering the images. It contains three main functions :greenscale(), sharpen() and mirror(). The green color filter converts the original image to a green scaled image. The sharpen filter highlights edges and fine details in an image. The mirror filter function will use convolution to convert the original image to a mirrored image i.e. the left side of the image will be transformed into the right side and the right side of the original image will be transformed into the left side. The package could be used by people to filter images, which could then be uploaded to social media platforms or other websites and applications.
+
+### Function description
+
+- Green color Filter `greenscale()`
+  - Description:
+    This green color filter converts the original image to a green scaled image.
+  - Input:
+    - `input_path`, path to the input image
+  - Output:
+    - greenscaled image
+
+
+- Sharpen Filter `sharpen_image()`
+  - Description:
+    This sharpen filter highlights edges and fine details in an image.
+  - Input:
+    - `input_path`, path to the input image
+  - Output:
+    - sharpened image
+
+- Mirror Filter `mirror()`
+  - Description:
+      This mirror filter function will use convolution to convert the original image to a mirrored image i.e. the left side of the image will be transformed into the right side and the right side of the original image will be transformed into the left side.
+  - Input:
+    - `input_path`, path to the input image
+  - Output:
+    - mirrored image
+    
+### How to use :   
+
+- Please check whether you have installed `devtools` in R.
+- Second, `install.packages("BiocManager")` so you can install the EBImage Dependencies `BiocManager::install("EBImage")`
+- To install `filterizeR` package, run the following line on your R console:
+`devtools::install_github("UBC-MDS/filterizeR",build_vignettes = TRUE)`
+
+* Use Greenscale function : greenscale("img/toy_img/gs_greenscale_toy.png")
+* Use Sharpen function  : sharpen("img/toy_img/sharpen_toy.png")
+* Use Mirror function: mirror("img/toy_img/mirror_toy.png")
+    

@@ -6,25 +6,35 @@
 # Feburary 2019
 # This script tests the function from sharpen.R
 
-
-# This function sharpens an image.
-# Input  : An image in .png, .jpeg,.gif,.bmp, .jpg format
-# Output : A sharpened image in the same format as the input image file type
-
-library(devtools)
-library(usethis)
-
 #' Sharpened
+#' This function sharpens an image.
+#' input_img  : An image in .png, .jpeg,.gif,.bmp, .jpg format
+#' output_img : A sharpened image in the same format as the input image file type
 #'
-#' @param input_path string, path for the input png file
+#' @param input_path character, path of the input png file
 #'
-#' @return a png file at the same path as input_path
+#' @return a png file path
 #' @export
-#'
 #' @examples
-#' #' sharpen("../img/test.png")
+#' #' sharpen("img/theme.png")
 #'
+
+
 sharpen <- function(input_path) {
-
-
+  
+  
+  input_img <- EBImage::readImage(input_path)
+  
+  #dim <- input_img %>% dim
+  
+  # Construct the sharpen filter `ft`.
+  ft <- matrix(c(0.00, -0.75, 0.00,-0.75, 4.50,-0.75, 0.00, -0.75, 0.00 ), nrow=3, ncol =3)
+  # Apply the sharpen filter `ft` to the input image.
+  output_img <- EBImage::filter2(input_img, ft, boundary = c("circular", "replicate"))
+  output_path <- stringr::str_replace(input_path, "/(?!.*/)", "/sharpened_")
+  EBImage::writeImage(output_img, output_path, quality = 85)
+  return(output_path)
+  
 }
+
+
