@@ -22,9 +22,5 @@ Imports:
     lattice,
     magrittr,
     dplyr,
-    BiocManager,
     rlang,
     png,
-    BioInstaller,
-    RcppTOML (>= 0.1.3),
-    Rcpp

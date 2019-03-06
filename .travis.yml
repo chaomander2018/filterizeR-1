@@ -1,51 +1,22 @@
 # R for travis: see documentation at https://docs.travis-ci.com/user/languages/r
-
 language: r
-
-# Needed to use apt_packages
-sudo: required
-
-cache: packages
-
-r:
-- release
-
-
-
-matrix:
-  include:
-    # works on Precise and Trusty
-    - os: linux
-      addons:
-        apt:
-          sources:
-            - ubuntu-toolchain-r-test
-          packages:
-            - g++-4.9
-      env:
-          - MATRIX_EVAL="CC=gcc-4.9 && CXX=g++-4.9"
-
-os:
-  - linux
-
-bioc_required: true
-bioc_packages:
-  - EBImage
-
-
-
-# Needed to build EBImage from source
-apt_packages:
-  - libcurl4-openssl-dev
+env: _R_CHECK_FORCE_SUGGESTS_=FALSE
 
 r_packages:
   - devtools
-  - covr
-  - RcppTOML
-  - fftwtools
-  
-warnings_are_errors: false
-dist: trusty
-notifications:
-    on_success: never
-    on_failure: true
+
+r: bioc-release
+bioc_packages:
+  - EBImage
+
+# Needed to build EBImage from source
+apt_packages:
+  - libfftw3-dev
+
+# Needed to use apt_packages
+sudo: true
+
+cache: packages
+
+after_success:
+- Rscript -e 'covr::codecov()'
