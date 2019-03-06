@@ -7,6 +7,11 @@ sudo: required
 
 cache: packages
 
+r:
+- release
+
+
+
 matrix:
   include:
     # works on Precise and Trusty
@@ -20,13 +25,14 @@ matrix:
       env:
           - MATRIX_EVAL="CC=gcc-4.9 && CXX=g++-4.9"
 
+os:
+  - linux
 
 bioc_required: true
 bioc_packages:
   - EBImage
 
-os:
-  - linux
+
 
 # Needed to build EBImage from source
 apt_packages:
@@ -37,3 +43,9 @@ r_packages:
   - covr
   - RcppTOML
   - fftwtools
+  
+warnings_are_errors: false
+dist: trusty
+notifications:
+    on_success: never
+    on_failure: true
