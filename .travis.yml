@@ -20,7 +20,17 @@ r_packages:
   - fftwtools
 
 # Needed to use apt_packages
-sudo: true
+sudo: required
 
 cache: packages
 
+before_install:
+    - eval "${MATRIX_EVAL}"
+    - sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-4.9 60 --slave /usr/bin/g++ g++ /usr/bin/g++-4.9
+
+after_failure:
+  - ./travis-tool.sh dump_logs
+
+after_success:
+  - bash <(curl -s https://codecov.io/bash)
+- Rscript -e 'library("covr"); covr::codecov()'
