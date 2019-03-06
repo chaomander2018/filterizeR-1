@@ -24,5 +24,6 @@ Imports:
     dplyr,
     BiocManager,
     rlang,
-    png
-
+    png,
+    BioInstaller,
+    fftwtools
