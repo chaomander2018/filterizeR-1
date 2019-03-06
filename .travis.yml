@@ -46,4 +46,4 @@ after_failure:
 
 after_success:
   - bash <(curl -s https://codecov.io/bash)
-- Rscript -e 'library("covr"); covr::codecov()'
+  - Rscript -e 'library("covr"); covr::codecov()'
