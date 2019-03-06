@@ -13,6 +13,11 @@ bioc_packages:
 apt_packages:
   - libfftw3-dev
 
+r_packages:
+  - covr
+  - RcppTOML
+  - fftwtools
+
 # Needed to use apt_packages
 sudo: true
 
