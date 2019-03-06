@@ -9,6 +9,12 @@ bioc_required: true
 bioc_packages:
   - EBImage
   
-sudo: false
+# Needed to build EBImage from source
+apt_packages:
+  - libfftw3-dev
+
+# Needed to use apt_packages
+sudo: true
+
 cache: packages
 
