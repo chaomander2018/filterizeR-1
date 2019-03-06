@@ -15,6 +15,7 @@ apt_packages:
 
 # Needed to use apt_packages
 sudo: true
+warnings_are_errors: false
 
 cache: packages
 
