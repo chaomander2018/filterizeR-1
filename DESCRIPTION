@@ -25,4 +25,5 @@ Imports:
     BiocManager,
     rlang,
     png,
-    BioInstaller
+    BioInstaller,
+    RcppTOML
