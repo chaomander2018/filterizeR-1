@@ -2,8 +2,6 @@
 
 language: r
 
-env:
-  -TRAVIS_R_VERSION_STRING="3.5.0"
 
 bioc_required: true
 bioc_packages:
