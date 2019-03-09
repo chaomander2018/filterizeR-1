@@ -1,4 +1,4 @@
-<img src="https://filterize.net/wp-content/uploads/2018/02/logo_text_bottom-2.png" align="right" height="190" width="220"/>
+<img src="img/logo.png" align="right" height="190" width="220"/>
 
 ## filterizeR
 This is a comprehensive image filter package based in R.
