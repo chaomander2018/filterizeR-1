@@ -32,9 +32,11 @@ test_img <- "test_img/test_sharpen.png"
 input_img <- EBImage::readImage(test_img)
 output_img <-EBImage::readImage(sharpen(test_img))
 
+test_that("Sharpen function throws error for incorrect file path", {
+  expect_error(sharpen("file_path.random"))
+})
+
 #"test_img/sharpened_theme.png")
-
-
 test_that("test whether the input image is a valid image formats", {
   # Test the valid input format
   expect_false(get.ext(test_img)[[1]]=="gif")
