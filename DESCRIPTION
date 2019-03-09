@@ -22,9 +22,6 @@ Imports:
     lattice,
     magrittr,
     dplyr,
-    BiocManager,
     rlang,
     png,
-    BioInstaller,
-    fftwtools,
     assertr
