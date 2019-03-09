@@ -22,8 +22,11 @@
 
 sharpen <- function(input_path) {
   
-  
-  input_img <- EBImage::readImage(input_path)
+  input_img <- tryCatch({
+    EBImage::readImage(input_path)
+  }, error = function(e) {
+    stop("Please enter valid file path")
+  })
   
   #dim <- input_img %>% dim
   

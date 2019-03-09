@@ -18,6 +18,10 @@ library(filterizeR)
 input_img <- load.image("test_img/test_original.jpg")
 output_img <- load.image(mirror("test_img/test_original.jpg"))
 
+test_that("Mirror function throws error for incorrect file path", {
+  expect_error(mirror("file_path.random"))
+})
+
 test_that("Input output dimensions match", {
   expect_equal(dim(input_img), dim(output_img))
 })
