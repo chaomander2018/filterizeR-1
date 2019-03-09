@@ -3,6 +3,8 @@
 ## filterizeR
 This is a comprehensive image filter package based in R.
 
+[![Build Status](https://travis-ci.org/UBC-MDS/filterizeR.svg?branch=master)](https://travis-ci.org/UBC-MDS/filterizeR)
+
 **Date:** 2019-03-03
 
 **License:** [MIT](https://opensource.org/licenses/MIT)
