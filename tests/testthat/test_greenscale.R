@@ -49,15 +49,24 @@ test_that("Input and output image dimensions match", {
   expect_equal(dim(input_img), dim(output_img))
 })
 
-test_that("test whether the input image is a valid image formats", {
-  expect_error(get.ext(input_img)[[1]]=="pdf")
-  expect_error(get.ext(input_img)[[1]]=="csv")
+# --------------------------------- Exception handling --------------------------------- #
+test_that("Input path is not a string", {
+  expect_error(greenscale(123, "test_img/gs_input1.png"))
+  expect_error(greenscale("test_img/input1.png",
+                         c(1,2,3)))
 })
 
-test_that("test whether the output image is a valid image formats, and it is the same format as the input image format", {
-  expect_error(get.ext(color(input_img))[[1]] != get.ext(input_img))
-  expect_error(get.ext(color(input_img))[[1]]=="pdf")
-  expect_error(get.ext(color(input_img))[[1]]=="csv")
+test_that("Input path does not exist", {
+  expect_error(greenscale("123/greenscale/input1.png",
+                         "test_img/greenscale/gs_input1.png"))
 })
 
+test_that("Input is not an image", {
+  expect_error(greenscale("test_img/greenscale/test.pdf"))
+})
 
+test_that("If user specifies additional arguments, it throws an error", {
+  expect_error(greenscale("test_img/input1.png",
+                         "test_img/gs_input1.png",
+                         "abc"))
+})

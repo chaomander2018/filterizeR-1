@@ -26,4 +26,5 @@ Imports:
     rlang,
     png,
     BioInstaller,
-    fftwtools
+    fftwtools,
+    assertr
