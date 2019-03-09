@@ -50,6 +50,10 @@ test_that("Input and output image dimensions match", {
 })
 
 # --------------------------------- Exception handling --------------------------------- #
+test_that("Greenscale function throws error for incorrect file path", {
+  expect_error(greenscale("file_path.random"))
+})
+
 test_that("Input path is not a string", {
   expect_error(greenscale(123, "test_img/gs_input1.png"))
   expect_error(greenscale("test_img/input1.png",
