@@ -17,17 +17,22 @@
 #'
 #' @return a png file at the same path as input_path
 #' @export
-#'
+#' 
 #' 
 #' 
 greenscale <- function(input_path) {
-  img <- png::readPNG(input_path)
+  # ----------------------------- Exception handling -------------------------- #
+  img <- tryCatch({
+    png::readPNG(input_path)
+  }, error = function(e) {
+    stop("Please enter valid file path")
+  })
   
   height <- dim(img)[1]
   width <- dim(img)[2]
   
   img_gs <- array(dim = dim(img))
-  # regex for saving output image
+  # ---------------------- Regex for saving output image ---------------------- #
   output_path <- stringr::str_replace(input_path, "/(?!.*/)", "/gs_")
   
   for (i in 1:height) {
@@ -45,7 +50,7 @@ greenscale <- function(input_path) {
       
     }
   }
-  
+  # ---------------------- Output image ---------------------- #
   png::writePNG(img_gs, output_path)
   return(output_path)
 }
